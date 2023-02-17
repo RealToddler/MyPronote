@@ -1,2 +1,2 @@
-# my_pronote
+# MyPronote
 school project 
