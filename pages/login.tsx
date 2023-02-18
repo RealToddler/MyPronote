@@ -14,14 +14,14 @@ const Login = () => {
           />
         </div>
         <div className="h-full w-1/2 p-5 self-center space-y-12">
-          <h1 className="flex justify-center text-3xl py-10">Log In</h1>
+          <div className="flex justify-center text-3xl py-10">Log In</div>
           <div className="h-full w-full space-y-6">
             <div className="w-full text-lg">
               Username
               <input
                 type="text"
                 id="username"
-                className="border-b-[2px] border-blue-900 outline-none w-full"
+                className="border-b-[2px] border-blue-900 outline-none w-full text-base"
               />
             </div>
             <div className="w-full text-lg">
@@ -29,7 +29,7 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
-                className="border-b-[2px] border-blue-900 outline-none w-full"
+                className="border-b-[2px] border-blue-900 outline-none w-full text-base"
               />
             </div>
             <div className="flex justify-center w-full">
