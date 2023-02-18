@@ -14,7 +14,7 @@ const HomeworksCard = () => {
       </div>
       <div className="w-full flex justify-end items-center space-x-2 text-sm">
         <span>J&apos;ai terminé </span>
-        <input type="checkbox" className="h-[16px] w-[16px]" />
+        <input type="checkbox" className="h-[16px] w-[16px] accent-rose-500" />
       </div>
     </div>
   );
