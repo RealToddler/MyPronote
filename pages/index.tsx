@@ -15,11 +15,11 @@ export default function Home() {
         userImage="toddler pfp.png"
       />
       <StudentHeader />
-      <div className="flex space-x-4">
-        <LastGradesCard />
-        <NextHomeWorksCard />
-        <a href="login">click me</a>
+      <div className="flex">
         <TimeTable />
+        <NextHomeWorksCard />
+        <LastGradesCard />
+        <a href="login">login page</a>
       </div>
       <Footer />
     </div>
