@@ -17,13 +17,8 @@ const LoginPrompt = () => {
   const handleButtonClick = async () => {
 
     try {
-      // if (username == "" || password == "") {
-      if (!username || !password) {
-        throw new Error("Please enter a username and a password");
-      } else {
         const token = singInAndGetToken(username, password); // Might need to export this, not sure if it is good to put is there yet
         console.log(`Token: ${token}`);
-      };
     } catch (error) {
       console.error(error);
       alert("Please enter valid credentials.");
