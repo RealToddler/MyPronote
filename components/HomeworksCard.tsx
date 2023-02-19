@@ -1,19 +1,23 @@
-const HomeworksCard = () => {
-  // obj: {subject: string, date: string, content: string}
+const HomeworksCard = (obj: {
+  subject: string;
+  date: string;
+  content: string;
+  id: string;
+}) => {
+  const statusId: string = `hw${obj.id}-status`;
+  const contentId: string = `hw${obj.id}-content`;
+  const inputId: string = `hw${obj.id}-input`;
 
   const homeworkDone = () => {
-    // Get the input element
-
     if (typeof window !== "undefined") {
-      const inputElement = document.getElementById("hw0-input") as HTMLInputElement;
-      const status = document.getElementById("hw0-status");
-      const content = document.getElementById("hw0-content");
+      const inputElement = document.getElementById(inputId) as HTMLInputElement;
+      const status = document.getElementById(statusId);
+      const content = document.getElementById(contentId);
 
-      // Add an event listener to the input element to listen for changes
       inputElement?.addEventListener("change", () => {
         if (inputElement.checked) {
           status ? (status.innerText = "Fait") : null;
-          content ? (content.setAttribute("style", "display: none")) : null
+          content ? content.setAttribute("style", "display: none") : null;
         } else {
           status ? (status.innerText = "Non Fait") : null;
           content ? content.setAttribute("style", "display: initial") : null;
@@ -23,28 +27,23 @@ const HomeworksCard = () => {
   };
 
   return (
-    <div className="m-2 w-[285px] space-y-2">
+    <div className="w-full space-y-2 p-1">
       <div className="flex justify-between text-sm font-semibold">
-        {"philosophie".toUpperCase()}
+        {obj.subject.toUpperCase()}
         <div
-          id="hw0-status"
+          id={statusId}
           className="bg-slate-900 w-[55px] h-[18px] text-white font-normal text-xs text-center rounded"
         >
           Non Fait
         </div>
       </div>
-      <div id="hw0-content" className="text-[14px] text-justify">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, esse
-        impedit sint maiores dolores voluptas eligendi eveniet officia quia aut
-        blanditiis, aspernatur magnam sit assumenda ex. Sed laboriosam totam
-        voluptatum?
+      <div id={contentId} className="text-[14px] w-full text-justify">
+        {obj.content}
       </div>
-      <div
-        className="w-full flex justify-end items-center space-x-2 text-sm"
-      >
+      <div className="flex justify-end items-center space-x-2 text-sm">
         <span>J&apos;ai terminé </span>
         <input
-          id="hw0-input"
+          id={inputId}
           type="checkbox"
           className="h-[16px] w-[16px] accent-rose-500"
           onClick={homeworkDone}
