@@ -1,32 +1,37 @@
 import { singInAndGetToken } from "modules/singIn";
 import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+// import { useRouter } from "next/router";
 
-
+// function redirectToIndex() {
+//   const router = useRouter();
+//   router.push("/");
+// }
+var successfulLogIn = false;
 const LoginPrompt = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const onUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setUsername(event.target.value);
-  };
-
-  const onPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setPassword(event.target.value);
-  };
-
   const handleButtonClick = async () => {
 
     try {
-      if (username == "" || password == "") {
-      // if (!username || !password) {
+      if (!username || !password) {
         throw new Error("Please enter a username and a password");
       } else {
-        const token = singInAndGetToken(username, password); // Might need to export this, not sure if it is good to put is there yet
+        const token = await singInAndGetToken(username, password); // Might need to export this, not sure if it is good to put is there yet
         console.log(`Token: ${token}`);
+        successfulLogIn = token != "" ? true : false;
       };
     } catch (error) {
       console.error(error);
-      alert("Please enter valid credentials.");
+    };
+    if (successfulLogIn) {
+      console.log("tried to redirect");
+      // tryToRedirect();
+      // redirectToIndex();
+      // return <Navigate replace to="/" />;
+    } else {
+      alert("Invalid username or password.");
     };
   };
 
@@ -38,7 +43,7 @@ const LoginPrompt = () => {
           type="text"
           id="username"
           value={username}
-          onChange={onUsernameChange}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {setUsername(event.target.value)}}
           required
           className="border-b-[2px] border-blue-900 outline-none w-full text-base"
         />
@@ -49,7 +54,7 @@ const LoginPrompt = () => {
           type="password"
           id="password"
           value={password}
-          onChange={onPasswordChange}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {setPassword(event.target.value)}}
           required
           className="border-b-[2px] border-blue-900 outline-none w-full text-base"
         />
