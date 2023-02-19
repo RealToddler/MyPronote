@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-key */
 import HomeworksCard from "./HomeworksCard";
+import {literalDate} from "utils/date"
 
 const NextHomeWorksCard = () => {
   const hwContent =
@@ -9,7 +11,7 @@ const NextHomeWorksCard = () => {
       { subject: "philosophie", content: hwContent },
       { subject: "mathématiques", content: hwContent },
     ],
-    "13-05-2023": [{ subject: "espagnol", content: hwContent }],
+    "10-02-2023": [{ subject: "espagnol", content: hwContent }],
   };
 
   const dates = Object.keys(db);
@@ -35,11 +37,16 @@ const NextHomeWorksCard = () => {
       <div className="p-2 text-base font-semibold text-center ">
         Travail à faire pour les prochains jours
       </div>
-      <div className="flex-row items-center p-2 space-y-2">
+      <div className="flex-row items-center space-y-2">
         {dates.map((dates, index) => {
           return (
-            <div key={index} id={dates.toString()}>
-              {dates} {sortHomeworks(db, dates, index.toString())}
+            <div id={dates.toString()}>
+              <div className="bg-blue-300 w-fit h-[30px] flex items-center rounded-r-lg px-2 text-sm">
+                Pour&nbsp;<span className="font-semibold">{literalDate(dates)}</span>
+              </div>
+              <div className="divide-y-[1.5px] divide-blue-900">
+                {sortHomeworks(db, dates, index.toString())}
+              </div>
             </div>
           );
         })}

@@ -27,7 +27,7 @@ const HomeworksCard = (obj: {
   };
 
   return (
-    <div className="w-full space-y-2 p-1">
+    <div className="w-full space-y-2 p-2">
       <div className="flex justify-between text-sm font-semibold">
         {obj.subject.toUpperCase()}
         <div
