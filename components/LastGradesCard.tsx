@@ -9,16 +9,16 @@ const LastGradesCard = () => {
         Dernières notes
       </div>
       <div className="flex-row items-center p-2 space-y-2">
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
-        <GradeCard subject="mathématiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
+        <GradeCard subject="mathematiques" date="14-02-2023" note="14" />
       </div>
     </div>
   );

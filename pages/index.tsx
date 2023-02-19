@@ -1,9 +1,9 @@
 import LastGradesCard from "components/LastGradesCard";
-import HomeworksCard from "components/HomeworksCard";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import StudentHeader from "components/UserHeader";
 import NextHomeWorksCard from "components/NextHomeworksCard";
+import TimeTable from "components/TimeTable";
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
         <LastGradesCard />
         <NextHomeWorksCard />
         <a href="login">click me</a>
+        <TimeTable />
       </div>
       <Footer />
     </div>

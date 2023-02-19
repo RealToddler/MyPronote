@@ -9,7 +9,7 @@ const NextHomeWorksCard = () => {
   const db = {
     "12-04-2023": [
       { subject: "philosophie", content: hwContent },
-      { subject: "mathématiques", content: hwContent },
+      { subject: "mathematiques", content: hwContent },
     ],
     "10-02-2023": [{ subject: "espagnol", content: hwContent }],
   };
@@ -33,7 +33,7 @@ const NextHomeWorksCard = () => {
   };
 
   return (
-    <div className="m-2 w-[350px] rounded border-2 border-blue-900">
+    <div className="m-2 w-[350px] h-fit rounded border-2 border-blue-900">
       <div className="p-2 text-base font-semibold text-center ">
         Travail à faire pour les prochains jours
       </div>
@@ -41,7 +41,7 @@ const NextHomeWorksCard = () => {
         {dates.map((dates, index) => {
           return (
             <div id={dates.toString()}>
-              <div className="bg-blue-300 w-fit h-[30px] flex items-center rounded-r-lg px-2 text-sm">
+              <div className="bg-blue-300 w-fit h-[25px] flex items-center rounded-r-lg px-2 text-sm">
                 Pour&nbsp;<span className="font-semibold">{literalDate(dates)}</span>
               </div>
               <div className="divide-y-[1.5px] divide-blue-900">
