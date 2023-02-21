@@ -1,23 +1,12 @@
 import { signInAndGetToken } from "modules/signIn";
 import { useState } from "react";
 
-<<<<<<< HEAD
+var successfulLogIn = false;
 const LoginPrompt = () => {
-  let successfulLogIn = false;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleButtonClick = async () => {
-=======
-
-var successfulLogIn = false;
-const LoginPrompt = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  
   async function HandleButtonClick() {
-    
->>>>>>> b68bb6a9080ede4b847a6efb1d5fe19cad6fe3ce
     try {
       if (!username || !password) {
         throw new Error("Please enter a username and a password");
@@ -31,14 +20,11 @@ const LoginPrompt = () => {
     }
     if (successfulLogIn) {
       console.log("tried to redirect");
-<<<<<<< HEAD
-=======
-      window.location.href = "/";  // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
->>>>>>> b68bb6a9080ede4b847a6efb1d5fe19cad6fe3ce
+      window.location.href = "/"; // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
     } else {
       alert("Invalid username or password.");
     }
-  };
+  }
 
   return (
     <div className="h-full w-full space-y-6">
@@ -69,14 +55,10 @@ const LoginPrompt = () => {
         />
       </div>
       <div className="flex justify-center w-full">
-<<<<<<< HEAD
         <button
           className="w-full bg-blue-900 h-[40px] hover:bg-sky-400 text-white transition duration-700 rounded"
-          onClick={handleButtonClick}
+          onClick={HandleButtonClick}
         >
-=======
-        <button className="w-full bg-blue-900 h-[40px] hover:bg-sky-400 text-white transition duration-700 rounded" onClick={HandleButtonClick}>
->>>>>>> b68bb6a9080ede4b847a6efb1d5fe19cad6fe3ce
           Log In
         </button>
       </div>
