@@ -1,7 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
-export async function singInAndGetToken(username: string, password: string){
+export async function signInAndGetToken(username: string, password: string){
   const auth = getAuth();
   try {
     const userCredential = await signInWithEmailAndPassword(auth, `${username}@example.com`, password);
@@ -13,8 +12,3 @@ export async function singInAndGetToken(username: string, password: string){
     return "";
   };
 };
-
-// export function tryToRedirect() {
-//   const nav = useNavigate();
-//   nav("/");
-// }
