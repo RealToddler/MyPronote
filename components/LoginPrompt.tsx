@@ -1,19 +1,14 @@
 import { singInAndGetToken } from "modules/singIn";
 import { useState } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-// import { useRouter } from "next/router";
 
-// function redirectToIndex() {
-//   const router = useRouter();
-//   router.push("/");
-// }
+
 var successfulLogIn = false;
 const LoginPrompt = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleButtonClick = async () => {
-
+  
+  async function HandleButtonClick() {
+    
     try {
       if (!username || !password) {
         throw new Error("Please enter a username and a password");
@@ -27,9 +22,7 @@ const LoginPrompt = () => {
     };
     if (successfulLogIn) {
       console.log("tried to redirect");
-      // tryToRedirect();
-      // redirectToIndex();
-      // return <Navigate replace to="/" />;
+      window.location.href = "/";  // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
     } else {
       alert("Invalid username or password.");
     };
@@ -60,7 +53,7 @@ const LoginPrompt = () => {
         />
       </div>
       <div className="flex justify-center w-full">
-        <button className="w-full bg-blue-900 h-[40px] hover:bg-sky-400 text-white transition duration-700 rounded" onClick={handleButtonClick}>
+        <button className="w-full bg-blue-900 h-[40px] hover:bg-sky-400 text-white transition duration-700 rounded" onClick={HandleButtonClick}>
           Log In
         </button>
       </div>
