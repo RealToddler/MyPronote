@@ -11,4 +11,8 @@ export async function signInAndGetToken(username: string, password: string){
     console.error(error);
     return "";
   };
+<<<<<<< HEAD:modules/signIn.ts
 };
+=======
+};
+>>>>>>> b68bb6a9080ede4b847a6efb1d5fe19cad6fe3ce:modules/singIn.ts
