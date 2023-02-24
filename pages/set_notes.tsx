@@ -1,4 +1,4 @@
-import NoteCard from "components/NoteCard";
+import NoteCard from "components/teacher/GradesCard";
 
 const SetNotes = () => {
 

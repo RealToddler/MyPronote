@@ -1,13 +1,15 @@
-import LastGradesCard from "components/LastGradesCard";
+import LastGradesCard from "components/student/LastGrades";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import StudentHeader from "components/UserHeader";
-import NextHomeWorksCard from "components/NextHomeworksCard";
+import Diary from "components/student/Diary";
 import TimeTable from "components/TimeTable";
+import StudentLifeCard from "components/student/StudentLife";
+import InfosAndPolls from "components/InfosAndPolls";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-screen h-screen">
       <Header
         school="CHEIKH SCHOOL"
         userSpace="Student"
@@ -15,19 +17,16 @@ export default function Home() {
         userImage="toddler pfp.png"
       />
       <StudentHeader />
-      <div className="flex">
+      <div className="flex w-screen justify-center space-x-4 p-4">
         <TimeTable />
-        <NextHomeWorksCard />
-        <LastGradesCard />
+        <Diary />
         <div>
-          <div>
-            <a href="login">login page</a>
-          </div>
-          <div>
-            <a href="set_notes">set notes</a>
-          </div>
+          <StudentLifeCard />
+          <LastGradesCard />
         </div>
+        <InfosAndPolls/>
       </div>
+      <Footer/>
     </div>
   );
 }
