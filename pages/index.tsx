@@ -19,9 +19,15 @@ export default function Home() {
         <TimeTable />
         <NextHomeWorksCard />
         <LastGradesCard />
-        <a href="login">login page</a>
+        <div>
+          <div>
+            <a href="login">login page</a>
+          </div>
+          <div>
+            <a href="set_notes">set notes</a>
+          </div>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 }
