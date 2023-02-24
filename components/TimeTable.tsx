@@ -146,7 +146,7 @@ const TimeTable = () => {
   };
 
   return (
-    <div className="m-2 w-[350px] h-fit rounded border-2 border-blue-800">
+    <div className="w-[350px] h-fit rounded border-2 border-blue-800">
       <div className="w-full flex justify-center p-4 space-x-2 items-center">
         <button
           id="previousDay"

@@ -1,7 +1,7 @@
 const StudentLifeCard = () => {
   // just a template
   return (
-    <div className="m-2 w-[350px] rounded border-2 border-blue-900">
+    <div className="w-[350px] rounded border-2 border-blue-900">
       <div className="pt-2 text-base font-semibold text-center ">
         Vie Scolaire
       </div>
