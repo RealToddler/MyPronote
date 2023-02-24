@@ -9,7 +9,7 @@ import InfosAndPolls from "components/InfosAndPolls";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen">
+    <div className="">
       <Header
         school="CHEIKH SCHOOL"
         userSpace="Student"
@@ -17,16 +17,15 @@ export default function Home() {
         userImage="toddler pfp.png"
       />
       <StudentHeader />
-      <div className="flex w-screen justify-center space-x-4 p-4">
+      <div className="flex justify-center space-x-4 p-4">
         <TimeTable />
         <Diary />
         <div>
           <StudentLifeCard />
           <LastGradesCard />
         </div>
-        <InfosAndPolls/>
+        <InfosAndPolls />
       </div>
-      <Footer/>
     </div>
   );
 }
