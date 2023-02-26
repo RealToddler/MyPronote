@@ -33,7 +33,7 @@ const NextHomeWorksCard = () => {
   };
 
   return (
-    <div className="w-[350px] h-fit rounded border-2 border-blue-900">
+    <div className="w-[350px] h-fit rounded border-2 border-blue-900 bg-white">
       <div className="p-2 text-base font-semibold text-center ">
         Travail à faire pour les prochains jours
       </div>

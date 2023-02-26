@@ -5,7 +5,7 @@ const LastGradesCard = () => {
   return (
     // should return grades from last 14 days...
     // atm i'll just show last x grades
-    <div className="w-[350px] rounded border-2 border-blue-900">
+    <div className="w-[350px] rounded border-2 border-blue-900 bg-white">
       <div className="p-2 text-base font-semibold text-center ">
         Dernières notes
       </div>
