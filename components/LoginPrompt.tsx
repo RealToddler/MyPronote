@@ -1,7 +1,9 @@
 import { signInAndGetToken } from "modules/signIn";
 import { useState } from "react";
 
-var successfulLogIn = false;
+// export let successfulLogIn: boolean
+
+let successfulLogIn = false;
 const LoginPrompt = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

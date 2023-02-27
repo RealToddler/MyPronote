@@ -5,7 +5,7 @@ import { firebaseConfig } from "firebase.config";
 import '../styles/globals.css'
 import { Firestore, getFirestore } from 'firebase/firestore'
 
-export var db: Firestore;
+export let db: Firestore;
 export default function App({ Component, pageProps }: AppProps) {
   initializeApp(firebaseConfig);
   const app = initializeApp(firebaseConfig);

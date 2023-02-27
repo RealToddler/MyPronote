@@ -8,7 +8,7 @@ const Login = () => {
         <div className="h-full w-1/2">
           <Image
             className="w-full h-full rounded-l-3xl"
-            src="/01.png"
+            src="/02.png"
             alt=""
             width="1024"
             height="1024"
