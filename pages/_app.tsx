@@ -7,7 +7,6 @@ import { Firestore, getFirestore } from 'firebase/firestore'
 
 export let db: Firestore;
 export default function App({ Component, pageProps }: AppProps) {
-  initializeApp(firebaseConfig);
   const app = initializeApp(firebaseConfig);
   db = getFirestore(app);
   return <Component {...pageProps} />
