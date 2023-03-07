@@ -1,6 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-export async function signIn(username: string, password: string) {
+export async function signIn(username: string, password: string): Promise<boolean> {
   const auth = getAuth();
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -10,9 +10,9 @@ export async function signIn(username: string, password: string) {
     );
     const token = await userCredential.user?.getIdToken(true);
     console.log(`Token: ${token}`);
-    return true;
   } catch (error) {
     console.error(error);
     return false;
   }
+  return true;
 }

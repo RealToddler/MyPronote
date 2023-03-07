@@ -18,7 +18,8 @@ const LoginPrompt = () => {
     } catch (error) {
       console.error(error);
     }
-    if (successfulLogIn) {
+    // if (successfulLogIn === Promise<true>) {
+    if (await signIn(username, password)) {
       console.log("trying to redirect");
       window.location.href = "/"; // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
     } else {
