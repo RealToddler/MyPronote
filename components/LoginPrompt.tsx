@@ -1,9 +1,9 @@
-import { signIn } from "modules/login";
+import { signInAndGetToken } from "modules/signIn";
 import { useState } from "react";
 
 // export let successfulLogIn: boolean
 
-let successfulLogIn: any;
+let successfulLogIn = false;
 const LoginPrompt = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,13 +13,15 @@ const LoginPrompt = () => {
       if (!username || !password) {
         throw new Error("Please enter a username and a password");
       } else {
-        successfulLogIn = signIn(username, password);
+        const token = await signInAndGetToken(username, password); // Might need to export this, not sure if it is good to put is there yet
+        console.log(`Token: ${token}`);
+        successfulLogIn = token != "" ? true : false;
       }
     } catch (error) {
       console.error(error);
     }
     if (successfulLogIn) {
-      console.log("trying to redirect");
+      console.log("tried to redirect");
       window.location.href = "/"; // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
     } else {
       alert("Invalid username or password.");
