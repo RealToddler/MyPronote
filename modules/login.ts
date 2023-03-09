@@ -12,7 +12,7 @@ export async function signIn(username: string, password: string) {
     console.log(`Token: ${token}`);
     return true;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return false;
   }
 }

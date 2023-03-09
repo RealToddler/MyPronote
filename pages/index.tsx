@@ -10,7 +10,7 @@ import Resources from "components/student/Resources";
 
 export default function Home() {
   return (
-    <div className="h-screen w-auto bg-sky-50">
+    <div className="h-auto w-auto bg-sky-50">
       <div className="fixed">
         <Header
           school="CHEIKH SCHOOL"
@@ -20,7 +20,7 @@ export default function Home() {
         />
         <StudentHeader />
       </div>
-      <div className="flex justify-center space-x-8 pt-[150px] pb-8">
+      <div className="flex justify-center space-x-8 pt-[150px]">
         <TimeTable />
         <Diary />
         <div className="space-y-8">
@@ -32,7 +32,9 @@ export default function Home() {
           <LastGrades />
         </div>
       </div>
-      <Footer />
+      <div className="pt-8">
+        <Footer />
+      </div>
     </div>
   );
 }
