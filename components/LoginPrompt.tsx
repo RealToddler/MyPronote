@@ -1,9 +1,7 @@
 import { signIn } from "modules/login";
 import { useState } from "react";
 
-// export let successfulLogIn: boolean
 
-let successfulLogIn: any;
 const LoginPrompt = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,14 +10,12 @@ const LoginPrompt = () => {
     try {
       if (!username || !password) {
         throw new Error("Please enter a username and a password");
-      } else {
-        successfulLogIn = signIn(username, password);
       }
     } catch (error) {
       console.error(error);
     }
-    // if (successfulLogIn === Promise<true>) {
     if (await signIn(username, password)) {
+      localStorage.setItem("local.username", username);
       console.log("trying to redirect");
       window.location.href = "/"; // Redirect working, will need to add functionality to remember which user is logged when we get to db managing
     } else {
