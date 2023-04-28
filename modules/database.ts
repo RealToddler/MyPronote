@@ -5,19 +5,24 @@ export async function getNotes(user: any) {
     const docReference = doc(db, "Grades", user);
     const document = await getDoc(docReference);
     if (document.exists()) {
-        console.log(document.data());
-        console.log(fetchNoteData(document.data()["TMATHSGR.3"][0]));
+        console.log(fetchNoteData(document.data()));
     } else {
         console.log("Could not get document")
     }
     return "document.data()";
 }
 
-function fetchNoteData(document: any) {
-    const dateOfGrade = document["date"].toDate().toLocaleDateString();
-    const fetchedNoteData = `Your note for ${document["gradeName"]} was: ${document["grade"]}/${document["scale"]}. This note was in ${document["subjectName"]} \
-and has a coef of ${document["coef"]}. The date of that note is ${dateOfGrade}`;
-    return fetchedNoteData;
-}
 
+function fetchNoteData(notesDocument: any) {
+    let fetchedData: Array<object> = [];
+    for (let k in notesDocument) {
+        for (let i=0; i < notesDocument[k].length; i++) {
+            let note = notesDocument[k][i];
+            note["date"] = note["date"].toDate().toLocaleDateString();
+            
+            fetchedData.push(note);
+        }
+    }
+    return fetchedData;
+}
 getNotes("eleve1");
