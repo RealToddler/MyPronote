@@ -1,14 +1,21 @@
 import GradeCard from "./GradesCard";
 import { getNotes } from "modules/database";
+import { useEffect, useState } from "react";
 
 const LastGradesCard = () => {
-  // console.log(sessionStorage.getItem("local.username"));
-  // async function notesFunction() {
-  //   return await getNotes(sessionStorage.getItem("local.username"), 10);
-  // }
-  // const notes = notesFunction(); // Limit can be changed to whatever, will probably change it to add time limit too
-  //! Does not work ATM, need to find a way to pass variables through pages
-  
+  const [notes, setNotes] = useState(Array);
+  //TODO Figure out a way to remember which user is logged in
+  useEffect(() => {
+    async function notesFunction() {
+      const userNotes = await getNotes("eleve1", 10); // Limit can be changed to whatever, will probably change it to add date limit too
+      setNotes(userNotes);
+    };
+    if (notes.length === 0) {
+      notesFunction();
+    }
+  }, []);
+
+  console.log(notes);
 
 
   return (
@@ -19,16 +26,13 @@ const LastGradesCard = () => {
         Dernières notes
       </div>
       <div className="flex-row items-center p-2 space-y-2">
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="10" scale="10" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="8" scale="10" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
-        <GradeCard subject="mathematiques" date="14-02-2023" note="14" scale="20" />
+        {
+          notes.map((note: any, index) => {
+            return (
+              <GradeCard subject={note["subjectName"]}  date={note["date"]} note={note["grade"]} scale={note["scale"]}/>
+            )
+          })
+        }
       </div>
     </div>
   );
