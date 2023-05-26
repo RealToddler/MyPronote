@@ -9,24 +9,24 @@ export async function getNotes(user: any, limit: number = 0) {
     } else {
         console.log("Could not get document")
     }
-    return fetchNoteData(document.data(), limit);
+    return formatNoteData(document.data(), limit);
 }
 
 
-function fetchNoteData(notesDocument: any, limit: number) {
+function formatNoteData(notesDocument: any, limit: number) {
     console.log("limit=", limit)
-    let fetchedData: Array<object> = [];
+    let formattedData: Array<object> = [];
     for (let k in notesDocument) {
         for (let i=0; i < notesDocument[k].length; i++) {
             let note = notesDocument[k][i];
             note["date"] = note["date"].toDate().toLocaleDateString().replaceAll("/", "-");
             
-            if (limit > 0 && fetchedData.length === limit) {
+            if (limit > 0 && formattedData.length === limit) {
                 break;
             };
-            fetchedData.push(note);
+            formattedData.push(note);
         }
     }
-    console.log(fetchedData);
-    return fetchedData;
+    console.log(formattedData);
+    return formattedData;
 }
