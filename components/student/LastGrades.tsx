@@ -13,7 +13,7 @@ const LastGradesCard = () => {
     if (notes.length === 0) {
       notesFunction();
     }
-  }, []);
+  });
 
   console.log(notes);
 
@@ -29,7 +29,7 @@ const LastGradesCard = () => {
         {
           notes.map((note: any, index) => {
             return (
-              <GradeCard subject={note["subjectName"]}  date={note["date"]} note={note["grade"]} scale={note["scale"]}/>
+              <GradeCard subject={note["subjectName"]}  date={note["date"]} note={note["grade"]} scale={note["scale"]} key={note.index}/>
             )
           })
         }
